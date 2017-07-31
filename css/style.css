@@ -86,3 +86,23 @@ body,html {
   text-align: center;
   font-size: 20px;
 }
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+kbd {
+  font-family: 'Oswald', sans-serif;
+  display: block;
+  font-size: 4rem;
+  background-color: black;
+}
+
+.sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: white;
+}
