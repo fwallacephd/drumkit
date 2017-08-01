@@ -2,170 +2,152 @@
 <html>
 
 <head>
-    <!--META TAGS-->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--META TAGS-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <meta name="description" content="Virtual Drum Kit"/>
+  <meta name="description" content="Virtual Drum Kit" />
 
-    <title>Virtual Drum Kit</title>
+  <title>Virtual Drum Kit</title>
 
-    <!-- Bootstrap, Animate.css, Font Awesome, CSS -->
-    <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+  <!-- Bootstrap, Animate.css, Font Awesome, CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis|Merriweather|Oswald">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Merriweather|Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css">
 
-    <link href="https://fastcdn.org/Animate.css/3.4.0/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
-</head><!--End Head Tags-->
+</head>
+<!--End Head Tags-->
 
 <!--BODY-->
+
 <body>
 
-<section class="header">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-6">
-        <p>Can You Play Like...</p>
-      </div><!--END col-md-6-->
-    </div><!--END Row-->
-  </div><!--END Container-Fluid-->
-</section><!--END Section Header-->
-
-<section class="drummers">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="drummer-list list-unstyled list-inline">
-          <li> <i class="fa fa-music" aria-hidden="true"></i> Steve Adler (Guns N' Roses) <i class="fa fa-music" aria-hidden="true"></i></li>
-          <li>Meg White (The White Stripes) <i class="fa fa-music" aria-hidden="true"></i></li>
-        </ul>
-      </div><!--END col-md-12-->
-        <ul class="drummer-list list-unstyled list-inline">
-          <li><i class="fa fa-music" aria-hidden="true"></i> Tommy Ramone (The Ramones) <i class="fa fa-music" aria-hidden="true"></i></li>
-          <!--<li>Elaine Bradley (Neon Trees) <i class="fa fa-music" aria-hidden="true"></i></li>-->
-        </ul>
-    </div><!--END Row-->
-  </div><!--END Container Fluid-->
-</section><!--END Drummers-->
-
-<section class="directions">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <p><strong>Click the letter on the keyboard that corresponds with the sound.<br>Try to create a rhythm.</strong> </p>
-      </div><!--END co1-md-12-->
-    </div><!--END Row-->
-  </div><!--END Container-Fluid-->
-  </section><!--END Directions-->
-
-<section class="keys">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-  <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">clap</span>
-    </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
-      <span class="sound">hihat</span>
-    </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
-      <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">openhat</span>
-    </div>
-    <div data-key="71" class="key">
-      <kbd>G</kbd>
-      <span class="sound">boom</span>
-    </div>
-    <div data-key="72" class="key">
-      <kbd>H</kbd>
-      <span class="sound">ride</span>
-    </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">snare</span>
-    </div>
-    <div data-key="75" class="key">
-      <kbd>K</kbd>
-      <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">tink</span>
-    </div>
-  </div>
-      </div><!--END col-md-12-->
-    </div><!--END Row-->
-  </div><!--END Container Fluid-->
-</section><!--END Keys-->
-
-<section class="audio">
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
-</section>
-
-
-  <script>
-    function removeTransition(e) {
-    if (e.propertyName !== 'transform') return;
-    e.target.classList.remove('playing');
-  }
-
-  function playSound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    if (!audio) return;
-
-    key.classList.add('playing');
-    audio.currentTime = 0;
-    audio.play();
-  }
-
-  const keys = Array.from(document.querySelectorAll('.key'));
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-  window.addEventListener('keydown', playSound);
-
-  </script>
-
-<section class="footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> and <i class="fa fa-music" aria-hidden="true"></i> by Faith H. Wallace, Ph.D. <i class="fa fa-copyright" aria-hidden="true"></i> 2017.</p>
+  <section class="header">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <p>Can You Play Like...</p>
+        </div>
+        <!--END col-md-6-->
       </div>
+      <!--END Row-->
     </div>
-  </div>
+    <!--END Container-Fluid-->
+  </section>
+  <!--END Section Header-->
+
+  <section class="drummers">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="drummer-list list-unstyled list-inline">
+            <li> <i class="fa fa-music" aria-hidden="true"></i> Steve Adler (Guns N' Roses) <i class="fa fa-music" aria-hidden="true"></i></li>
+            <li>Meg White (The White Stripes) <i class="fa fa-music" aria-hidden="true"></i></li>
+            <li><i class="fa fa-music" aria-hidden="true"></i> Tommy Ramone (The Ramones) <i class="fa fa-music" aria-hidden="true"></i></li>
+            <!--<li>Elaine Bradley (Neon Trees) <i class="fa fa-music" aria-hidden="true"></i></li>-->
+          </ul>
+        </div>
+        <!--END Row-->
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="instructions">Click the letter on the keyboard that corresponds with the sound.<br>Try to create a rhythm.</p>
+        </div>
+        <!--END co1-md-12-->
+      </div>
+      <!--END Row-->
+    </div>
+    <!--END Container-Fluid-->
+  </section>
+  <!--END Directions-->
+
+  <section class="keys">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="keys">
+            <div data-key="65" class="key">
+              <kbd>A</kbd>
+              <span class="sound">clap</span>
+            </div>
+            <div data-key="83" class="key">
+              <kbd>S</kbd>
+              <span class="sound">hihat</span>
+            </div>
+            <div data-key="68" class="key">
+              <kbd>D</kbd>
+              <span class="sound">kick</span>
+            </div>
+            <div data-key="70" class="key">
+              <kbd>F</kbd>
+              <span class="sound">openhat</span>
+            </div>
+            <div data-key="71" class="key">
+              <kbd>G</kbd>
+              <span class="sound">boom</span>
+            </div>
+            <div data-key="72" class="key">
+              <kbd>H</kbd>
+              <span class="sound">ride</span>
+            </div>
+            <div data-key="74" class="key">
+              <kbd>J</kbd>
+              <span class="sound">snare</span>
+            </div>
+            <div data-key="75" class="key">
+              <kbd>K</kbd>
+              <span class="sound">tom</span>
+            </div>
+            <div data-key="76" class="key">
+              <kbd>L</kbd>
+              <span class="sound">tink</span>
+            </div>
+          </div>
+        </div>
+        <!--END col-md-12-->
+      </div>
+      <!--END Row-->
+    </div>
+    <!--END Container Fluid-->
+  </section>
+  <!--END Keys-->
+
+  <section class="audio">
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
   </section>
 
-    <script text="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <section class="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> and <i class="fa fa-music" aria-hidden="true"></i> by
+            Faith H. Wallace, Ph.D. <i class="fa fa-copyright" aria-hidden="true"></i> 2017.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-
-    <script type="text/javascript" src="js/main.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>
