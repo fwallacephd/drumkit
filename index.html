@@ -72,7 +72,7 @@
     <div class="row">
       <div class="col-md-12">
   <div class="keys">
-    <div data-key="65" class="key">
+    <div data-key="65" class="key" onclick="playSound(65)">
       <kbd>A</kbd>
       <span class="sound">clap</span>
     </div>
@@ -115,10 +115,7 @@
 </section><!--END Keys-->
 
 <section class="audio">
-  <button type="button">
-    <audio data-key="65" src="sounds/clap.wav"></audio>
-  </button>
-
+  <audio data-key="65" src="sounds/clap.wav"></audio>
   <audio data-key="83" src="sounds/hihat.wav"></audio>
   <audio data-key="68" src="sounds/kick.wav"></audio>
   <audio data-key="70" src="sounds/openhat.wav"></audio>
